@@ -35,6 +35,8 @@ if (Test-Path $dstLock -PathType Leaf -and -not (Test-Path "$dstLock.bak")) {
 Copy-Item $srcDesktop $dstDesktop -Force
 Copy-Item $srcLock    $dstLock    -Force
 
+Start-Sleep -Seconds 5
+
 RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 
 Write-Host "Images copiées :" -ForegroundColor Cyan
